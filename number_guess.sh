@@ -12,7 +12,7 @@ USER_IN_DATABASE_RESULT=$($PSQL "select username from users where username = '$U
 #echo "DEBUG: USER_IN_DATABASE_RESULT=$USER_IN_DATABASE_RESULT"
 
 if [[ -z "$USER_IN_DATABASE_RESULT" ]]; then
-	echo "Welcome $USERNAME! It looks like this is your first time here."
+	echo "Welcome, $USERNAME! It looks like this is your first time here."
   $PSQL "insert into users (username, games_played) values ('$USERNAME', 0)" > /dev/null
   GAMES_PLAYED=0
 else
